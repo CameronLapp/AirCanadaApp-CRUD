@@ -1,0 +1,74 @@
+﻿@model IEnumerable<AirCanadaApp.Models.FlightData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if (User.Identity.IsAuthenticated) {
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalCity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+                @if (User.Identity.IsAuthenticated) {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.FlightDataId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.FlightDataId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.FlightDataId">Delete</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.FlightDataId">Details</a>
+                    </td>
+                }
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,30 +1,12 @@
-# AirCanadaApp
+# AIRCANADA APP
 
-AirCanadaApp is a web application for managing flight data and ticket orders using **ASP.NET Core MVC**. It demonstrates how to implement **CRUD operations** for flight data and ticket bookings, providing users with the ability to:
+The aim of this airline application is to help the user understand better how to manage flight data, so through this tool you will be able to manage different information related to a certain flight. Right now, users can manually enter in a flight with the airplane image and track the information of departure, arrival, seat availability and much more.
+Saving feature:
+FlightDatasController: With this class, users will be able to create, edit, and delete the different values of flight. It will help you create an empty list and simulate how to track a flight, without buying the real tickets.
+TicketOrdersController: It allows us to observe a process of purchasing a ticket, though full booking functionality will have to be developed in the future.
+Seat availability preview feature: So, once the full ticketing feature is ready, you will get a preview of which flight you are going to buy.
 
-- View available flights
-- Book tickets
-- Edit or delete bookings
-- View ticket details
+ Beyond providing information about current AirCanada flights, future features are planned for the AirCanada App to automate flight data management significantly more. In addition to the current real time functionality, the AirCanada App will feature auto-generated flights that will be populated and periodically refreshed to replicate new flight info, as well as upcoming departures and flights currently in flight. Instead of having to manually generate new flights, the flights appear dynamically and will be tracked in real time. For ongoing flights, the application will persist those flights if they are still in flight and store the status until the scheduled arrival time has passed, at which point the flight will vanish as complete or cancelled. Future features will feature delayed flights for greater realism in flight tracking in the AirCanada App. In addition to frozen flights that track flights from top to bottom, the app will eventually support a login feature that will allow users to sign in with a Google account to personalise and track flights they have ‘booked’. Updates or notifications for flight changes like delays or gate changes will also be supported. With these features, AirCanada App development will go beyond maintaining flight data and transform it into a travel management application providing up to the second flight information, as well as booking capabilities for flights and seats.
 
-## Features
 
-- **Flight Management**: Create, read, update, and delete flight data including flight number, cities of departure and arrival, departure and arrival times, and prices.
-- **Ticket Management**: Book tickets for available flights, view ticket details, and modify or cancel bookings.
-- **User Authentication**: Secure areas using ASP.NET Core's **[Authorize]** attribute, ensuring only authorized users can access certain actions.
-- **Database Integration**: Uses **Entity Framework Core** to interact with an SQL database for storing flight and ticket information.
-
-## Technologies Used
-
-- **ASP.NET Core MVC**: A web framework for building web applications.
-- **Entity Framework Core**: Object-Relational Mapping (ORM) to handle database interactions.
-- **SQL Server**: The database used for storing flight and ticket information.
-- **Razor Views**: For rendering dynamic HTML content on the server side.
-
-## Installation and Setup
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/cameronlapp/AirCanadaApp-CRUD.git
-   cd AirCanadaApp-CRUD
+LINK TO APPLICATION: https://aircanadaapp.somee.com
